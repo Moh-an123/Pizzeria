@@ -1,0 +1,200 @@
+/* Page Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+header {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 900;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Ingredients Grid */
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+/* Ingredient Card */
+.ingredient-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/* Hover effect */
+.ingredient-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Selected card border effect */
+.ingredient-card:has(.add-btn-red) {
+  border: 2px solid rgba(40, 167, 69, 0.55);
+}
+
+/* Image section */
+.ingredient-image {
+  height: 180px;
+  background: #f6f6f6;
+  overflow: hidden;
+}
+
+.ingredient-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.35s ease;
+}
+
+.ingredient-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Info section */
+.ingredient-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.ingredient-info h3 {
+  margin: 10px 0 6px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #222;
+}
+
+.ingredient-price {
+  font-size: 15px;
+  font-weight: 900;
+  color: #ff4d00;
+  margin-bottom: 14px;
+}
+
+/* Buttons */
+.add-btn,
+.add-btn-red {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+/* Add Button */
+.add-btn {
+  background: #28a745;
+  color: #fff;
+}
+
+.add-btn:hover {
+  background: #1f8b37;
+  transform: translateY(-2px);
+}
+
+/* Remove Button */
+.add-btn-red {
+  background: #dc3545;
+  color: #fff;
+}
+
+.add-btn-red:hover {
+  background: #b52a37;
+  transform: translateY(-2px);
+}
+
+/* Add Custom Pizza button */
+.add-cart-btn {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #ff4d00, #ff8a00);
+  box-shadow: 0 12px 22px rgba(255, 77, 0, 0.25);
+  transition: 0.25s ease;
+}
+
+/* Button hover */
+.add-cart-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 28px rgba(255, 77, 0, 0.35);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  header {
+    font-size: 28px;
+  }
+
+  .ingredient-image {
+    height: 160px;
+  }
+
+  .add-cart-btn {
+    font-size: 15px;
+    padding: 13px;
+  }
+}
+/* ✅ Fixed bar always bottom */
+.fixed-cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 16px;
+  /* background: rgba(255, 255, 255, 0.92); */
+  backdrop-filter: blur(8px);
+  --webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 -10px 22px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
+
+/* ✅ Fixed button styling */
+.add-cart-btn {
+  width: 100%;
+  max-width: 520px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #ff4d00, #ff8a00);
+  box-shadow: 0 12px 22px rgba(255, 77, 0, 0.25);
+  transition: 0.25s ease;
+}
+
+.add-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(255, 77, 0, 0.38);
+}
+
+/* ✅ IMPORTANT: give space at bottom so grid content won't hide behind fixed bar */
+.container {
+  padding-bottom: 90px; /* enough space for fixed button */
+}

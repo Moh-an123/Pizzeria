@@ -1,0 +1,80 @@
+{"Ingredients": [
+    {
+      "id": 101,
+      "tname": "Pepperoni",
+      "price": 110,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fat%20Slice%20pepperoni%20pizza%20slice.JPG"
+    },
+    {
+      "id": 102,
+      "tname": "Mushroom",
+      "price": 35,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Button%20Mushrooms.jpg"
+    },
+    {
+      "id": 103,
+      "tname": "Black beans",
+      "price": 45,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Black%20beans.jpg"
+    },
+    {
+      "id": 104,
+      "tname": "Black olive",
+      "price": 50,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Black%20Olives.JPG"
+    },
+    {
+      "id": 105,
+      "tname": "Green olive",
+      "price": 50,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Green%20olives.jpg"
+    },
+    {
+      "id": 106,
+      "tname": "Jalapeno",
+      "price": 45,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jalape%C3%B1os1.jpg"
+    },
+    {
+      "id": 107,
+      "tname": "Chicken",
+      "price": 60,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raw%20chicken.jpg"
+    },
+    {
+      "id": 108,
+      "tname": "Tomato",
+      "price": 20,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bright%20red%20tomato%20and%20cross%20section02.jpg"
+    },
+    {
+      "id": 109,
+      "tname": "Red peprika",
+      "price": 30,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Red%20bell%20pepper.jpg"
+    },
+    {
+      "id": 110,
+      "tname": "Paneer",
+      "price": 45,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Homemade%20Paneer%20cut%20into%20pieces%20for%20cooking%20Cheese%20Fromage%20India.jpg"
+    },
+    {
+      "id": 111,
+      "tname": "Fried Onion",
+      "price": 18,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fried%20Onion%20Rings%20...%20(52939334391).jpg"
+    },
+    {
+      "id": 112,
+      "tname": "Capsicum",
+      "price": 15,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Green%20capsicum%2C%20sweet%20bell%20pepper.jpg"
+    },
+    {
+      "id": 114,
+      "tname": "Sweet corn",
+      "price": 38,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/VegCorn.jpg"
+    }
+  ]}

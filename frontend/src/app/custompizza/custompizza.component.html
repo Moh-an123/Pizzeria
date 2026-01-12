@@ -1,0 +1,30 @@
+<div class="container">
+  <header>Pizza Ingredients</header>
+
+  <section class="ingredients-grid">
+    <article class="ingredient-card" *ngFor="let item of Ingredients">
+      <div class="ingredient-image">
+        <img [src]="item.image" [alt]="item.tname">
+      </div>
+
+      <div class="ingredient-info">
+        <h3>{{item.tname}}</h3>
+        <p class="ingredient-price">₹{{item.price}}</p>
+
+        <button class="add-btn" (click)="addIngredient(item)" *ngIf="!item.selected">
+          Add
+        </button>
+
+        <button class="add-btn-red" (click)="removeIngredient(item)" *ngIf="item.selected">
+          remove
+        </button>
+      </div>
+    </article>
+  </section>
+
+  <div class="fixed-cart-bar">
+    <button class="add-cart-btn" (click)="sendToCart()">
+      Add Custom Pizza to Cart
+    </button>
+  </div>
+</div>

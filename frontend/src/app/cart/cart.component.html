@@ -1,0 +1,108 @@
+<div class="cart-container">
+
+  <div class="cart-header">
+    <h2>🛒 Shopping Cart</h2>
+
+    <div class="header-actions">
+
+      <button class="toggle-btn" (click)="toggleCart()">
+        {{ showCart ? 'Hide Cart' : 'Show Cart' }}
+        <span class="cart-badge" *ngIf="getTotalItems() > 0">
+          {{ getTotalItems() }}
+        </span>
+      </button>
+
+      <button class="clear-btn"
+              (click)="clearCart()"
+              [disabled]="cart.length === 0">
+        🧹 Clear All
+      </button>
+
+    </div>
+  </div>
+
+  <div class="cart-content" *ngIf="showCart">
+
+    <div *ngIf="cart.length === 0" class="empty-cart">
+      <div class="empty-icon">🛒</div>
+      <p>Your cart is empty</p>
+      <small>Add items from the menu to get started!</small>
+    </div>
+
+    <div *ngIf="cart.length > 0" class="cart-items-wrapper">
+
+      <div class="cart-items">
+        <div *ngFor="let item of cart" class="cart-item">
+
+          <div class="item-header">
+            <div class="item-info">
+              <h3>{{ item.name }}</h3>
+
+              <span class="item-type" [ngClass]="item.type">
+                {{ item.type === 'veg' ? '🌱 VEG' : '🍖 NON-VEG' }}
+              </span>
+
+              <p class="item-base-price">Base Pizza: ₹{{ item.price }}</p>
+
+              <div *ngIf="(item.ingredients?.length || 0) > 0" class="ingredient-list">
+                <small><b>Included Ingredients:</b></small>
+
+                <div class="ingredient-chip" *ngFor="let ing of item.ingredients">
+                  {{ ing.tname }}
+                </div>
+              </div>
+            </div>
+
+            <button class="delete-btn" (click)="removeFromCart(item)">
+              🗑️
+            </button>
+          </div>
+
+          <div class="item-footer">
+
+            <div class="quantity-controls">
+              <button (click)="updateQuantity(item, -1)">−</button>
+              <span class="quantity">{{ item.quantity }}</span>
+              <button (click)="updateQuantity(item, 1)">+</button>
+            </div>
+
+            <button class="confirm-btn"
+                    *ngIf="item.quantityChanged"
+                    (click)="confirmQuantity(item)">
+              ✅ Confirm
+            </button>
+
+            <div class="item-total">
+              <strong>₹{{ getItemTotal(item).toFixed(2) }}</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="price-summary">
+        <h3>💰 Bill Summary</h3>
+
+        <div class="price-row">
+          <span>Subtotal:</span>
+          <span>₹{{ getSubtotal().toFixed(2) }}</span>
+        </div>
+
+        <div class="price-row">
+          <span>GST (18%):</span>
+          <span>₹{{ getTax().toFixed(2) }}</span>
+        </div>
+
+        <div class="price-row total">
+          <span>Total Amount:</span>
+          <span>₹{{ getTotal().toFixed(2) }}</span>
+        </div>
+      </div>
+
+      <button class="checkout-btn" (click)="checkout()">
+        🎉 Proceed to Checkout
+      </button>
+
+    </div>
+  </div>
+</div>

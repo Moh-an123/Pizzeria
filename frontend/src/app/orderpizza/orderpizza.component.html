@@ -1,0 +1,47 @@
+<div class="container">
+    <header>Pizzeria Specials</header>
+    <!-- <p>{{data}}</p> -->
+    <!-- Pizza Cards -->
+    <section class="pizza-grid">
+        <article class="pizza-card" *ngFor="let pizza of pizzas">
+            <!-- Pizza Image -->
+            <div class="pizza-image">
+                <img [src]="pizza.image" [alt]="pizza.name">
+                <span class="pizza-type" [ngClass]="pizza.type">{{pizza.type}}</span>
+            </div>
+            
+            <!-- Pizza Info -->
+            <div class="pizza-info">
+               <h2>{{pizza.name}}</h2>
+<p class="pizza-price">₹{{pizza.price}}</p>
+
+                <!-- <p class="pizza-id">Pizza #{{pizza.id}}</p> -->
+                <p class="pizza-description">{{pizza.description}}</p>
+                
+                <!-- Ingredients -->
+                <div class="ingredients-section">
+                    <h3>Base Ingredients:</h3>
+                    <ul class="ingredients-list">
+                        <li *ngFor="let ingredient of pizza.ingredients">
+                            {{ingredient.tname}}
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Toppings -->
+                <div class="toppings-section">
+                    <h3>Toppings:</h3>
+                    <ul class="toppings-list">
+                        <li *ngFor="let topping of pizza.topping">
+                            <span class="topping-name">{{topping.tname}}</span>
+                            <span class="topping-price">+₹{{topping.price}}</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="order-btn" (click)="addToCart(pizza)" *ngIf="!pizza.inCart">Order Now</button>
+                <h1 class="order-btn-g" *ngIf="pizza.inCart"> Added to cart</h1>
+            </div>
+        </article>
+    </section>
+</div>

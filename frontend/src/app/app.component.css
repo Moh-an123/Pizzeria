@@ -1,0 +1,93 @@
+/* Navbar main */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(135deg, #ff4d00, #ff8a00);
+  padding: 14px 20px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  font-family: "Poppins", sans-serif;
+}
+
+/* List */
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+/* Item */
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Link */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 14px;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.2px;
+}
+
+/* Hover */
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+/* Active Router Link */
+.active {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Brand */
+.nav-item:first-child .nav-link {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+}
+
+/* Cart Link */
+.cart-link {
+  position: relative;
+}
+
+/* Badge */
+.cart-badge {
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+  min-width: 20px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .nav-list {
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 9px 13px;
+  }
+}
